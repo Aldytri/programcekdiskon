@@ -1,0 +1,31 @@
+program CekDiskon;
+Uses crt;
+var
+cmemb,cdisk:boolean;
+bdisk,hnorm,ha:real;
+a,b:string;
+begin
+clrscr;
+write('harga normal baju');readln(hnorm);
+write('cek diskon Y/N');readln(a);
+cdisk:=a='Y';
+clrscr;
+write('harga normal baju',hnorm);
+write('cek diskon Y/N',cdisk);
+write('cek member Y/N');readln(b);
+cmemb:=b='Y';
+clrscr;
+write('harga normal baju',hnorm);
+write('cek diskon Y/N',cdisk);
+write('cek member Y/N',cmemb);
+if (cdisk and cmemb)then
+bdisk:=0.25*hnorm
+else if (cdisk and not cmemb)then
+bdisk:=0.20*hnorm
+else if (not (cdisk) and not (cmemb)) then
+bdisk:=0*hnorm
+ha:=hnorm-bdisk;
+writeln('harga akhir:',ha);
+readln;
+readkey;
+end.
